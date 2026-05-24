@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sahan Nayanajith | AI Researcher & Software Engineer</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Professional portfolio of Sahan Nayanajith, an AI Researcher, Software Engineer, and Top Rated Upwork Freelancer specializing in Agentic AI, Machine Learning, and Enterprise Web Development.">
+  <meta name="keywords" content="Sahan Nayanajith, AI Researcher, Software Engineer, Upwork Top Rated, Agentic AI, Machine Learning, Deep Learning, Quantum Computing, University of Moratuwa, Web Developer">
+  <meta name="author" content="Sahan Nayanajith">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sahannt98.github.io/">
+  <meta property="og:title" content="Sahan Nayanajith | AI Researcher & Software Engineer">
+  <meta property="og:description" content="Portfolio showcasing works, skills, publications, and projects in AI/ML and Software Engineering. Top Rated Upwork Freelancer.">
+  
+  <!-- Style Sheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Particle Background -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Navigation Header -->
+  <header id="header">
+    <div class="container nav-container">
+      <a href="#home" class="logo" id="nav-logo">
+        SAHAN<span class="logo-dot"></span>
+      </a>
+      
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#home" class="nav-link active" id="link-home">Home</a></li>
+          <li><a href="#about" class="nav-link" id="link-about">About</a></li>
+          <li><a href="#experience" class="nav-link" id="link-experience">Experience</a></li>
+          <li><a href="#publications" class="nav-link" id="link-publications">Publications</a></li>
+          <li><a href="#projects" class="nav-link" id="link-projects">Projects</a></li>
+          <li><a href="#skills-certs" class="nav-link" id="link-skills-certs">Skills & Certs</a></li>
+          <li><a href="#contact" class="nav-link" id="link-contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-socials">
+        <a href="https://linkedin.com/in/sahannt/" target="_blank" rel="noopener noreferrer" class="social-icon" id="header-social-linkedin" aria-label="LinkedIn Profile">
+          <i data-lucide="linkedin"></i>
+        </a>
+        <a href="https://github.com/sahannt98" target="_blank" rel="noopener noreferrer" class="social-icon" id="header-social-github" aria-label="GitHub Profile">
+          <i data-lucide="github"></i>
+        </a>
+      </div>
+
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-tag" id="hero-tag-box">
+            <span class="hero-tag-glow"></span>
+            Available for AI & Software Projects
+          </div>
+          <h1 class="hero-title" id="main-hero-title">
+            Hi, I'm <br><span>Sahan Nayanajith</span>
+          </h1>
+          <div class="hero-typing-container">
+            I am a&nbsp;<span id="typing-text"></span><span class="cursor"></span>
+          </div>
+          <p class="hero-desc" id="hero-profile-summary">
+            <!-- Loaded dynamically from data.js -->
+          </p>
+          <div class="hero-ctas">
+            <a href="https://www.upwork.com/freelancers/~01b4c30c8047970d4b" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="cta-hire">
+              <i data-lucide="briefcase"></i> Hire on Upwork
+            </a>
+            <a href="./assets/Sahan-Nayanajith-CV.pdf" target="_blank" class="btn btn-secondary" id="cta-cv" download>
+              <i data-lucide="download"></i> Download CV
+            </a>
+          </div>
+          <div class="hero-upwork-badge" id="upwork-badge-container">
+            <span class="upwork-logo-badge">upwork</span>
+            <span>|</span>
+            <span>Freelance Status: <strong>Top Rated</strong></span>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <div class="hero-circle-glow"></div>
+          <div class="hero-image-frame">
+            <!-- Profile avatar loaded dynamically or falls back to SVG graphic -->
+            <img src="./assets/profile.jpg" alt="Sahan Nayanajith" class="hero-image" id="profile-img" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\' fill=\'%2311131e\'><circle cx=\'50\' cy=\'50\' r=\'45\' stroke=\'%2300f2fe\' stroke-width=\'2\'/><path d=\'M50,20 C35,20 35,45 50,45 C65,45 65,20 50,20 Z M20,80 C20,60 35,55 50,55 C65,55 80,60 80,80 Z\' fill=\'%23a1a8c0\'/></svg>'">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About & Research Interests Section -->
+    <section id="about">
+      <div class="container">
+        <span class="section-tag">Interests</span>
+        <h2 class="section-title">Research Focus & Core Pursuits</h2>
+        <p class="section-desc">I bridge the gap between academic research and commercial software delivery. My core areas of inquiry include:</p>
+        
+        <div class="interests-grid" id="interests-grid-container">
+          <!-- Loaded dynamically from data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience & Upwork Section -->
+    <section id="experience">
+      <div class="container">
+        <span class="section-tag">Career Journey</span>
+        <h2 class="section-title">Professional Experience</h2>
+        <p class="section-desc">A history of delivering solid software and artificial intelligence solutions, both in industry settings and as an independent contractor.</p>
+        
+        <div class="experience-layout">
+          <!-- Upwork Highlight Panel -->
+          <div class="upwork-highlight-card" id="upwork-highlight-block">
+            <div class="upwork-info">
+              <h3>
+                Upwork Freelancing
+                <span class="badge-gold">
+                  <i data-lucide="award" class="upwork-badge-icon"></i> Top Rated
+                </span>
+              </h3>
+              <p>Delivering high-quality machine learning, API automation, and full-stack software systems to international clients.</p>
+              <ul class="upwork-bullets">
+                <li>Automating client business workflows using Node.js, Node-RED, and LLMs.</li>
+                <li>Designing, training, and deploying custom TensorFlow/Hugging Face ML models.</li>
+                <li>Integrating advanced AI systems, conversational agents, and workflow APIs.</li>
+              </ul>
+              <a href="https://www.upwork.com/freelancers/~01b4c30c8047970d4b" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="upwork-profile-btn">
+                <i data-lucide="external-link"></i> View Upwork Profile
+              </a>
+            </div>
+            <div class="upwork-stats-grid">
+              <div class="upwork-stat-box">
+                <div class="upwork-stat-num gold">100%</div>
+                <div class="upwork-stat-label">Job Success</div>
+              </div>
+              <div class="upwork-stat-box">
+                <div class="upwork-stat-num">Top Rated</div>
+                <div class="upwork-stat-label">Freelancer Status</div>
+              </div>
+              <div class="upwork-stat-box" style="grid-column: span 2;">
+                <div class="upwork-stat-num" style="font-size: 1.25rem; word-break: break-all;">USA, NL, AU, IN</div>
+                <div class="upwork-stat-label">Global Clients</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vertical Timeline for Company Roles -->
+          <div class="timeline" id="experience-timeline">
+            <!-- Loaded dynamically from data.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications">
+      <div class="container">
+        <span class="section-tag">Academic Research</span>
+        <h2 class="section-title">Publications</h2>
+        <p class="section-desc">Contributing to the scientific community through peer-reviewed research papers and publications.</p>
+        
+        <div id="publications-container">
+          <!-- Loaded dynamically from data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="container">
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">Selected Projects</h2>
+        <p class="section-desc">A showcase of projects covering machine learning implementations, system engineering, and web applications.</p>
+        
+        <!-- Filter Tabs -->
+        <div class="project-filters" id="project-filters-container">
+          <button class="filter-btn active" data-filter="all" id="filter-all">All Projects</button>
+          <button class="filter-btn" data-filter="ai-ml" id="filter-ai-ml">AI & ML</button>
+          <button class="filter-btn" data-filter="web-se" id="filter-web-se">Web & SE</button>
+          <button class="filter-btn" data-filter="iot" id="filter-iot">IoT & Hardware</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid-container">
+          <!-- Loaded dynamically from data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Certifications Section -->
+    <section id="skills-certs">
+      <div class="container certificates-layout">
+        
+        <!-- Skills Column -->
+        <div class="skills-column">
+          <span class="section-tag">Knowledge Base</span>
+          <h3>Technical Expertise</h3>
+          
+          <div class="skills-container" id="skills-categories-container">
+            <!-- Loaded dynamically from data.js -->
+          </div>
+        </div>
+
+        <!-- Certifications Column -->
+        <div class="certs-column">
+          <span class="section-tag">Credentials</span>
+          <h3>Certifications</h3>
+          
+          <div class="certs-grid" id="certifications-grid-container">
+            <!-- Loaded dynamically from data.js -->
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-desc">Have a research proposal, a freelance project, or an engineering role you'd like to discuss? Reach out below.</p>
+        
+        <div class="contact-grid">
+          <!-- Contact Channels -->
+          <div class="contact-info-cards">
+            <div class="contact-info-card">
+              <div class="contact-info-icon">
+                <i data-lucide="mail"></i>
+              </div>
+              <div class="contact-info-text">
+                <h4>Email</h4>
+                <p><a href="mailto:sahantm0@gmail.com" id="contact-email-link">sahantm0@gmail.com</a></p>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="contact-info-icon">
+                <i data-lucide="phone"></i>
+              </div>
+              <div class="contact-info-text">
+                <h4>Phone</h4>
+                <p><a href="tel:+94769024552" id="contact-phone-link">+94 76 902 4552</a></p>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="contact-info-icon">
+                <i data-lucide="map-pin"></i>
+              </div>
+              <div class="contact-info-text">
+                <h4>Location</h4>
+                <p id="contact-location-text">Sri Lanka (Available Globally)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Simple Email Trigger Form -->
+          <div class="contact-form">
+            <form action="mailto:sahantm0@gmail.com" method="GET" enctype="text/plain" id="contact-email-form">
+              <div class="form-group">
+                <label for="form-name">Name</label>
+                <input type="text" id="form-name" name="subject" class="form-control" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="form-message">Message</label>
+                <textarea id="form-message" name="body" class="form-control" placeholder="Hi Sahan, I'd like to collaborate on..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" id="form-submit-btn" style="width: 100%; justify-content: center;">
+                <i data-lucide="send"></i> Send Message via Email Client
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="logo">
+        SAHAN<span class="logo-dot"></span>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <p class="footer-text" id="footer-copyright">
+        &copy; 2026 Sahan Nayanajith. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Code Script Files -->
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
