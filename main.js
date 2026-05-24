@@ -22,7 +22,9 @@ function initApp() {
   initProjectFilter();
   
   // Initial Lucide Icons Render
-  lucide.createIcons();
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
 }
 
 // --- Dynamic Rendering Functions ---
@@ -143,7 +145,9 @@ window.toggleCitation = function(index) {
     element.classList.add('show');
     btn.innerHTML = `<i data-lucide="x"></i> Hide BibTeX`;
   }
-  lucide.createIcons();
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
 };
 
 window.copyCitation = function(index) {
@@ -225,7 +229,9 @@ function renderProjects(filter = 'all') {
   }).join('');
   
   // Re-render Lucide icons inside projects container
-  lucide.createIcons();
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
 }
 
 function renderSkills() {
