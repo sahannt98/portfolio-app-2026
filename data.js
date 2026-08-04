@@ -1,8 +1,8 @@
 const portfolioData = {
   profile: {
     name: "Sahan Nayanajith",
-    title: "AI Researcher & Software Engineer",
-    subTitle: "Top Rated Freelancer on Upwork",
+    title: "PhD Candidate & AI Researcher",
+    subTitle: "Software Engineer | Top Rated Freelancer on Upwork",
     avatar: "./assets/profile.jpg",
     cvUrl: "./assets/Sahan-Nayanajith-CV.pdf",
     email: "sahantm0@gmail.com",
@@ -10,7 +10,7 @@ const portfolioData = {
     location: "Sri Lanka",
     github: "https://github.com/sahannt98",
     linkedin: "https://linkedin.com/in/sahannt/",
-    summary: "B.Sc. Engineering Honours graduate from the University of Moratuwa specializing in AI, Machine Learning, and Software Engineering. Top Rated Freelancer on Upwork with a track record of delivering advanced AI integrations, LLM-powered applications, and robust enterprise software solutions."
+    summary: "PhD Candidate in Computer Science (Machine Learning) at The University of Melbourne, researching digital twin development for biopharmaceutical manufacturing. B.Sc. Engineering Honours graduate from the University of Moratuwa, and a Top Rated Freelancer on Upwork with a track record of delivering advanced AI integrations, LLM-powered applications, and robust enterprise software solutions."
   },
   stats: {
     badge: "Top Rated",
@@ -23,9 +23,20 @@ const portfolioData = {
     { title: "Quantum Computing", description: "Exploring quantum algorithms and their intersection with artificial intelligence.", icon: "atom" },
     { title: "Deep Learning", description: "Building and fine-tuning state-of-the-art neural architectures for vision and NLP.", icon: "network-wired" },
     { title: "Machine Learning", description: "Developing predictive analytics, ML in production (MLOps), and anomaly detection systems.", icon: "chart-line" },
-    { title: "Computer Vision", description: "Object detection, classification, and real-time video analytics pipelines.", icon: "eye" }
+    { title: "Computer Vision", description: "Object detection, classification, and real-time video analytics pipelines.", icon: "eye" },
+    { title: "Digital Twins", description: "Developing digital twin models for unit operations in biopharmaceutical manufacturing processes.", icon: "flask-conical" }
   ],
   education: [
+    {
+      institution: "The University of Melbourne",
+      location: "Melbourne, Australia",
+      degree: "Ph.D. in Computer Science (Machine Learning)",
+      period: "Aug 2026 - Present",
+      details: [
+        "School of Computing and Information Systems",
+        "Thesis: Digital Twin Development for Unit Operations in Biopharmaceutical Manufacturing"
+      ]
+    },
     {
       institution: "University of Moratuwa",
       location: "Moratuwa, Sri Lanka",

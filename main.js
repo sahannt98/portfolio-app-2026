@@ -7,6 +7,7 @@ function initApp() {
   // Render Dynamic Sections
   renderProfile();
   renderInterests();
+  renderEducation();
   renderExperience();
   renderPublications();
   renderProjects('all');
@@ -50,6 +51,34 @@ function renderInterests() {
       </div>
       <h3>${interest.title}</h3>
       <p>${interest.description}</p>
+    </div>
+  `).join('');
+}
+
+function renderEducation() {
+  const container = document.getElementById('education-timeline');
+  if (!container) return;
+
+  container.innerHTML = portfolioData.education.map(edu => `
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-header">
+          <div>
+            <h3 class="role-title">${edu.degree}</h3>
+            <div class="company-info">
+              <i data-lucide="graduation-cap"></i>
+              <span>${edu.institution}</span>
+              <span class="text-muted">•</span>
+              <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: normal;">${edu.location}</span>
+            </div>
+          </div>
+          <span class="timeline-date">${edu.period}</span>
+        </div>
+        <ul class="timeline-desc">
+          ${edu.details.map(detail => `<li>${detail}</li>`).join('')}
+        </ul>
+      </div>
     </div>
   `).join('');
 }
@@ -330,8 +359,9 @@ function initTypingEffect() {
   if (!textEl) return;
   
   const phrases = [
+    "PhD Candidate",
+    "AI / ML Researcher",
     "Software Engineer",
-    "AI / ML Developer",
     "Top Rated Freelancer",
     "Quantum Tech Enthusiast"
   ];
