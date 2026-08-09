@@ -8,20 +8,18 @@ function initApp() {
   renderProfile();
   renderInterests();
   renderEducation();
-  renderExperience();
   renderPublications();
+  renderExperience();
   renderProjects('all');
   renderSkills();
   renderCertifications();
-  
+
   // Initialize Interactive Elements
   initMobileMenu();
   initHeaderScroll();
-  initTypingEffect();
-  initParticleBackground();
   initScrollSpy();
   initProjectFilter();
-  
+
   // Initial Lucide Icons Render
   if (typeof lucide !== 'undefined') {
     lucide.createIcons();
@@ -32,8 +30,12 @@ function initApp() {
 
 function renderProfile() {
   const profile = portfolioData.profile;
-  
-  // Hero Summary
+
+  const roleEl = document.getElementById('hero-role-line');
+  if (roleEl) {
+    roleEl.textContent = profile.title;
+  }
+
   const summaryEl = document.getElementById('hero-profile-summary');
   if (summaryEl) {
     summaryEl.textContent = profile.summary;
@@ -185,12 +187,12 @@ window.copyCitation = function(index) {
   
   navigator.clipboard.writeText(content).then(() => {
     btn.innerText = 'Copied!';
-    btn.style.borderColor = 'var(--accent-cyan)';
-    btn.style.color = 'var(--accent-cyan)';
-    
+    btn.style.borderColor = 'var(--accent)';
+    btn.style.color = 'var(--accent)';
+
     setTimeout(() => {
       btn.innerText = 'Copy';
-      btn.style.borderColor = 'var(--border-glass)';
+      btn.style.borderColor = 'var(--border)';
       btn.style.color = 'var(--text-secondary)';
     }, 2000);
   });
@@ -354,54 +356,6 @@ function initHeaderScroll() {
   });
 }
 
-function initTypingEffect() {
-  const textEl = document.getElementById('typing-text');
-  if (!textEl) return;
-  
-  const phrases = [
-    "PhD Candidate",
-    "AI / ML Researcher",
-    "Software Engineer",
-    "Top Rated Freelancer",
-    "Quantum Tech Enthusiast"
-  ];
-  
-  let phraseIdx = 0;
-  let charIdx = 0;
-  let isDeleting = false;
-  let typingSpeed = 100;
-  
-  function type() {
-    const currentPhrase = phrases[phraseIdx];
-    
-    if (isDeleting) {
-      textEl.textContent = currentPhrase.substring(0, charIdx - 1);
-      charIdx--;
-      typingSpeed = 50;
-    } else {
-      textEl.textContent = currentPhrase.substring(0, charIdx + 1);
-      charIdx++;
-      typingSpeed = 100;
-    }
-    
-    if (!isDeleting && charIdx === currentPhrase.length) {
-      // Pause at full word
-      typingSpeed = 2000;
-      isDeleting = true;
-    } else if (isDeleting && charIdx === 0) {
-      isDeleting = false;
-      phraseIdx = (phraseIdx + 1) % phrases.length;
-      // Pause before next word
-      typingSpeed = 500;
-    }
-    
-    setTimeout(type, typingSpeed);
-  }
-  
-  // Start the typing loop
-  setTimeout(type, 1000);
-}
-
 function initScrollSpy() {
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('.nav-link');
@@ -432,126 +386,9 @@ function initProjectFilter() {
     btn.addEventListener('click', (e) => {
       buttons.forEach(b => b.classList.remove('active'));
       e.target.classList.add('active');
-      
+
       const filterValue = e.target.getAttribute('data-filter');
       renderProjects(filterValue);
     });
   });
-}
-
-// --- Canvas Network Particle Background ---
-
-function initParticleBackground() {
-  const canvas = document.getElementById('particles-canvas');
-  if (!canvas) return;
-  
-  const ctx = canvas.getContext('2d');
-  let particlesArray = [];
-  
-  // Canvas Size
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  
-  window.addEventListener('resize', () => {
-    resizeCanvas();
-    createParticles();
-  });
-  
-  resizeCanvas();
-  
-  // Particle Class
-  class Particle {
-    constructor(x, y, directionX, directionY, size, color) {
-      this.x = x;
-      this.y = y;
-      this.directionX = directionX;
-      this.directionY = directionY;
-      this.size = size;
-      this.color = color;
-    }
-    
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-      ctx.fillStyle = this.color;
-      ctx.fill();
-    }
-    
-    update() {
-      // Check boundaries and bounce
-      if (this.x > canvas.width || this.x < 0) {
-        this.directionX = -this.directionX;
-      }
-      if (this.y > canvas.height || this.y < 0) {
-        this.directionY = -this.directionY;
-      }
-      
-      // Move particle
-      this.x += this.directionX;
-      this.y += this.directionY;
-      
-      this.draw();
-    }
-  }
-  
-  // Populate Particles
-  function createParticles() {
-    particlesArray = [];
-    // Number of particles depends on screen size
-    const numberOfParticles = Math.min(Math.floor((canvas.width * canvas.height) / 14000), 100);
-    
-    for (let i = 0; i < numberOfParticles; i++) {
-      const size = Math.random() * 2 + 1; // 1 to 3 size
-      const x = Math.random() * (canvas.width - size * 2) + size;
-      const y = Math.random() * (canvas.height - size * 2) + size;
-      
-      // Speed multiplier
-      const directionX = (Math.random() * 0.4) - 0.2;
-      const directionY = (Math.random() * 0.4) - 0.2;
-      const color = 'rgba(0, 242, 254, 0.2)'; // Cyber Cyan with opacity
-      
-      particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
-    }
-  }
-  
-  // Connect Particles with lines
-  function connect() {
-    let opacityValue = 1;
-    const maxDistance = 120;
-    
-    for (let a = 0; a < particlesArray.length; a++) {
-      for (let b = a; b < particlesArray.length; b++) {
-        const distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + 
-                         ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-        
-        if (distance < maxDistance * maxDistance) {
-          // Line fades as nodes get further
-          opacityValue = 1 - (distance / (maxDistance * maxDistance));
-          ctx.strokeStyle = `rgba(157, 78, 221, ${opacityValue * 0.12})`; // Violet connector lines
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-          ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-          ctx.stroke();
-        }
-      }
-    }
-  }
-  
-  // Animation Loop
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    for (let i = 0; i < particlesArray.length; i++) {
-      particlesArray[i].update();
-    }
-    
-    connect();
-    requestAnimationFrame(animate);
-  }
-  
-  createParticles();
-  animate();
 }

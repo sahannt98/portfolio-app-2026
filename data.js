@@ -21,7 +21,7 @@ const portfolioData = {
   researchInterests: [
     { title: "Agentic AI", description: "Designing autonomous multi-agent systems and advanced prompt/tool execution frameworks.", icon: "brain" },
     { title: "Quantum Computing", description: "Exploring quantum algorithms and their intersection with artificial intelligence.", icon: "atom" },
-    { title: "Deep Learning", description: "Building and fine-tuning state-of-the-art neural architectures for vision and NLP.", icon: "network-wired" },
+    { title: "Deep Learning", description: "Building and fine-tuning state-of-the-art neural architectures for vision and NLP.", icon: "network" },
     { title: "Machine Learning", description: "Developing predictive analytics, ML in production (MLOps), and anomaly detection systems.", icon: "chart-line" },
     { title: "Computer Vision", description: "Object detection, classification, and real-time video analytics pipelines.", icon: "eye" },
     { title: "Digital Twins", description: "Developing digital twin models for unit operations in biopharmaceutical manufacturing processes.", icon: "flask-conical" }
